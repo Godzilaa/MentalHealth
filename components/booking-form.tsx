@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { toast } from "@/components/ui/use-toast"
 import { processPayment } from "@/lib/payment-processing"
 
 export default function BookingForm({ therapistId, therapistName, rate }: { therapistId: number, therapistName: string, rate: number }) {
@@ -24,25 +23,27 @@ export default function BookingForm({ therapistId, therapistName, rate }: { ther
       const { success, transactionId } = await processPayment(totalAmount)
 
       if (success) {
-        toast({
-          title: "Booking Confirmed",
-          description: `Your session with ${therapistName} has been booked for ${date} at ${time}. Transaction ID: ${transactionId}`,
-        })
+        // toast({
+        //   title: "Booking Confirmed",
+        //   description: `Your session with ${therapistName} has been booked for ${date} at ${time}. Transaction ID: ${transactionId}`,
+        // })
         // Here you would typically send the booking data to your backend
         console.log('Booking submitted:', { therapistId, date, time, duration, transactionId })
       } else {
-        toast({
-          title: "Payment Failed",
-          description: "There was an error processing your payment. Please try again.",
-          variant: "destructive",
-        })
+        // toast({
+        //   title: "Payment Failed",
+        //   description: "There was an error processing your payment. Please try again.",
+        //   variant: "destructive",
+        // })
+        console.error("Payment Failed: There was an error processing your payment. Please try again.")
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "An unexpected error occurred. Please try again later.",
-        variant: "destructive",
-      })
+      // toast({
+      //   title: "Error",
+      //   description: "An unexpected error occurred. Please try again later.",
+      //   variant: "destructive",
+      // })
+      console.error("Error: An unexpected error occurred. Please try again later.")
     } finally {
       setIsProcessing(false)
     }

@@ -2,6 +2,7 @@
 node_modules/
 .next/
 .out/
+dist/
 
 # Large files
 *.h5
@@ -15,16 +16,12 @@ node_modules/
 # Python
 __pycache__/
 *.py[cod]
-*.venv
-myenv/Backend/
+.venv/
 venv/
 ENV/
+myenv/
 
 # Node.js
 node_modules/
 .next/
 dist/
-
-# Environment files
-.env
-.env.local

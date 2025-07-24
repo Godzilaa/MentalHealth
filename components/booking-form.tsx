@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from 'react'
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -85,9 +84,9 @@ export default function BookingForm({ therapistId, therapistName, rate }: { ther
         </Select>
       </div>
       <p className="font-semibold">Total: ${rate * parseFloat(duration)}</p>
-      <Button type="submit" className="w-full" disabled={isProcessing}>
+      <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded" disabled={isProcessing}>
         {isProcessing ? "Processing..." : "Book and Pay"}
-      </Button>
+      </button>
     </form>
   )
 }

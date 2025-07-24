@@ -8,9 +8,10 @@ export default function About() {
       <p className="mb-4">
         Our mission is to empower individuals to take control of their health and well-being through innovative technology and compassionate AI assistance.
       </p>
-      <p>
+      <p className="mb-4">
         With features like fall detection, mental health support, and comprehensive health monitoring, we're here to ensure you have the support you need, when you need it.
       </p>
+      <p>It&apos;s a great app!</p>
     </div>
   )
 }

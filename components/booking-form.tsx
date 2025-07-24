@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { processPayment } from "@/lib/payment-processing"
 
-export default function BookingForm({ therapistId, therapistName, rate }: { therapistId: number, therapistName: string, rate: number }) {
+export default function BookingForm({ therapistId, rate }: { therapistId: number, rate: number }) {
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
   const [duration, setDuration] = useState('1')
